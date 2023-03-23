@@ -1,1 +1,3 @@
 "# Django-base" 
+
+pip install
