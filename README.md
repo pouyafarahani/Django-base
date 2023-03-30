@@ -1,4 +1,4 @@
-This is the first repository of all my Django projects, there is a file named base_model, all my models mostly inherit from it.
+Why is an apps file created and a common file inside? All my apps are placed in the apps file to keep the project clean, and all models inherit from common
 
 Follow these steps to use this repository:
 
