@@ -3,7 +3,7 @@
 
 # Custom Django
 venv
-
+.env
 ### Django ###
 *.log
 *.pot
