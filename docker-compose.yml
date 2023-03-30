@@ -5,18 +5,19 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: python /code/manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/code
+      - code:/code
+      - static:/code/static
     ports:
       - "8000:8000"
     depends_on:
       - db
     environment:
-      - "DJANGO_SECRET_KEY=${DOCKER_COMPOSE_DJANGO_SECRET_KEY}"
-      - "DJANGO_DEBUG=True"
+    - "DJANGO_SECRET_KEY=${DOCKER_COMPOSE_DJANGO_SECRET_KEY}"
+    - "DJANGO_DEBUG=${DOCKER_COMPOSE_DJANGO_DEBUG}"
 
   db:
-    image: postgres:latest
+    image: postgres:15
     environment:
       - "POSTGRES_HOST_AUTH_METHOD=trust"
